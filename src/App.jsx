@@ -10,7 +10,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Proposal />} />
                 <Route path="/Flattery-Project" element={<Proposal />} />
-                <Route path="/home" element={<Home />} />
+                {/* <Route path="/home" element={<Home />} /> */}
             </Routes>
         </BrowserRouter>
     );

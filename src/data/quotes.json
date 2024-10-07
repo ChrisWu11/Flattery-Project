@@ -3,33 +3,33 @@
     {
       "id": "Q2",
       "text": "这世上可爱的人分两种：一种是你这样的，一种是像你这样的。",
-      "image": "/images/image-03.webp"
+      "image": "/Flattery-Project/images/image-03.webp"
     },
     {
       "id": "Q3",
       "text": "看见你我就知道怎么去解释什么是漂亮了。",
-      "image": "/images/image-02.webp"
+      "image": "/Flattery-Project/images/image-02.webp"
     },
     {
       "id": "Q4",
       "text": "美好的事情你都用脸做到了。",
-      "image": "/images/image-01.webp"
+      "image": "/Flattery-Project/images/image-01.webp"
     },
     {
       "id": "Q5",
       "text": "月色与雪色之间，你是第三种绝色。",
-      "image": "/images/image-07.webp"
+      "image": "/Flattery-Project/images/image-07.webp"
     },
     {
       "id": "Q6",
       "text": "你从天堂落下凡的时候是种什么感受？",
-      "image": "/images/image-06.webp"
+      "image": "/Flattery-Project/images/image-06.webp"
     }
   ],
   "propose": {
     "id": "finished",
     "text": "你再不回去迪士尼就要没公主了！！！",
     "subtext": "刘亦...是你吗？",
-    "image": "/images/image-04.webp"
+    "image": "/Flattery-Project/images/image-04.webp"
   }
 }
