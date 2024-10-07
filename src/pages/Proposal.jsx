@@ -23,7 +23,7 @@ const Proposal = ({ className = '' }) => {
     const addQoutes = () => {
         // const qoute = texts.length >= qoutes.length ? propose : genRandom(qoutes, texts);
         let qoute;
-        if (textIndex === 5) {
+        if (textIndex === qoutes.length) {
             qoute = propose;
         } else {
             qoute = qoutes[textIndex];
@@ -34,8 +34,8 @@ const Proposal = ({ className = '' }) => {
     };
 
     const playAudio = () => {
-        const audio = document.getElementById('myAudio');
         if (isPlay.current === false) {
+            const audio = document.getElementById('myAudio');
             audio.play();
             isPlay.current = true;
         }
