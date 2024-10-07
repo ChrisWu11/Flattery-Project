@@ -1,0 +1,42 @@
+@keyframes smileAnimation {
+  0%,
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  55%,
+  65%,
+  75%,
+  85% {
+    transform: translateY(-30px) rotate(-5deg);
+  }
+  60%,
+  70%,
+  80%,
+  90% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.smileImg {
+  animation: smileAnimation 3s infinite;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: 12vw;
+  z-index: 999;
+}
+
+@media (max-width: 750px) {
+  .smileImg {
+    right: auto; /* 取消右侧定位 */
+    left: 40px;
+    bottom: 100px;
+    width: 20vw;
+  }
+}

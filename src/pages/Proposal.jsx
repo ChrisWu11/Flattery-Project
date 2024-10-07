@@ -1,14 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
 import GenQoutes from '../components/GenQoutes';
 import { images } from '../data/preload-image-list.json';
 import { propose, qoutes } from '../data/quotes.json';
+import './Proposal.css';
 
 const Proposal = ({ className = '' }) => {
     // const { id } = useParams();
     // const person = id.split('-').join(' ');
+    const smileImgSrc = '/Flattery-Project/images/smile.webp';
 
+    // const smileImgSrc = '/images/smile.webp';
     const [texts, setTexts] = useState([]);
     const [currentText, setCurrentText] = useState({
         image: '/Flattery-Project/images/image-05.webp',
@@ -90,29 +92,10 @@ const Proposal = ({ className = '' }) => {
                         </div>
                     </Col>
                 </Row>
+                <img className="smileImg" src={smileImgSrc} alt="miniso最漂亮的姐姐" />
             </Container>
         </div>
     );
 };
 
 export default Proposal;
-
-function AudioPlayer() {
-    const audioRef = useRef(null);
-
-    const handlePlay = () => {
-        audioRef.current.play();
-    };
-
-    const handlePause = () => {
-        audioRef.current.pause();
-    };
-
-    return (
-        <div>
-            <audio ref={audioRef} src="/music/perfect.mp3" />
-            <button onClick={handlePlay}>播放</button>
-            <button onClick={handlePause}>暂停</button>
-        </div>
-    );
-}
