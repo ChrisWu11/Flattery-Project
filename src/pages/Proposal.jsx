@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import GenQoutes from '../components/GenQoutes';
 import { images } from '../data/preload-image-list.json';
@@ -9,6 +9,7 @@ const Proposal = ({ className = '' }) => {
     // const { id } = useParams();
     // const person = id.split('-').join(' ');
     const smileImgSrc = '/Flattery-Project/images/smile.webp';
+    const isPlay = useRef(false);
 
     // const smileImgSrc = '/images/smile.webp';
     const [texts, setTexts] = useState([]);
@@ -32,8 +33,17 @@ const Proposal = ({ className = '' }) => {
         setTexts((prevData) => [...prevData, qoute]);
     };
 
+    const playAudio = () => {
+        const audio = document.getElementById('myAudio');
+        if (isPlay.current === false) {
+            audio.play();
+            isPlay.current = true;
+        }
+    };
+
     // handle click
     const handleClick = (e) => {
+        playAudio();
         const button = e.target;
         // remove previous shaking effect
         button.classList.remove('shake');
@@ -50,6 +60,7 @@ const Proposal = ({ className = '' }) => {
     // effects
     useEffect(() => {
         document.title = `Smile - Laughing 姐`;
+        // playAudio();
     }, []);
 
     // preload images
@@ -93,6 +104,10 @@ const Proposal = ({ className = '' }) => {
                     </Col>
                 </Row>
                 <img className="smileImg" src={smileImgSrc} alt="miniso最漂亮的姐姐" />
+                <audio id="myAudio" controls autoPlay hidden>
+                    <source src="/Flattery-Project/music/perfect.mp3" type="audio/mpeg" />
+                    <embed src="/Flattery-Project/music/perfect.mp3" />
+                </audio>
             </Container>
         </div>
     );
