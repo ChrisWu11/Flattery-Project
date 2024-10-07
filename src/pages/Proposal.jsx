@@ -14,7 +14,7 @@ const Proposal = ({ className = '' }) => {
     const [texts, setTexts] = useState([]);
     const [currentText, setCurrentText] = useState({
         image: '/Flattery-Project/images/image-05.webp',
-        subtext: 'I want to tell you something',
+        subtext: 'The most beautiful girl in MINISO',
     });
     const [textIndex, setTextIndex] = useState(0);
 

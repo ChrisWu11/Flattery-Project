@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && node ./rename.js",
     "preview": "vite preview",
     "lint": "yarn add -D prettier && yarn add -D @babel/eslint-parser @babel/preset-react && npx install-peerdeps --dev eslint-config-airbnb && yarn add -D eslint-config-prettier eslint-plugin-prettier"
   },
