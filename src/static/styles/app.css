@@ -156,7 +156,7 @@ body {
   }
   .proposal .main-content .card.last {
     border: none;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
   }
   .proposal .main-content .card:not(.last) {
     background-color: rgba(255, 255, 255, 0.15);
