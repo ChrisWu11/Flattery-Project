@@ -75,12 +75,6 @@ const Proposal = ({ className = '' }) => {
         });
     };
 
-    // effects
-    useEffect(() => {
-        document.title = `Smile - Laughing 姐`;
-        // playAudio();
-    }, []);
-
     // preload images
     useEffect(() => {
         images.forEach((image) => {
