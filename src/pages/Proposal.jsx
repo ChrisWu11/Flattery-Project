@@ -31,6 +31,7 @@ const Proposal = ({ className = '' }) => {
             setTextIndex(textIndex + 1);
         }
         setCurrentText((prevData) => ({ ...prevData, ...qoute }));
+        console.log('currentText', currentText);
         setTexts((prevData) => [...prevData, qoute]);
         setActiveIndex(texts.length);
     };
@@ -62,10 +63,7 @@ const Proposal = ({ className = '' }) => {
     const changeCard = (item) => () => {
         const index = texts.findIndex((_) => _.id === item.id);
         setActiveIndex(index);
-        setCurrentText({
-            image: texts[index].image,
-            subtext: currentText.subtext,
-        });
+        setCurrentText({ ...currentText, image: texts[index].image });
     };
 
     // effects

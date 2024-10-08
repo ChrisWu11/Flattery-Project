@@ -19,7 +19,7 @@ const GenQoutes = ({ className = '', texts = [], activeIndex, changeCard }) => {
                           key={item.id}
                           bg={index === activeIndex ? 'danger' : 'default'}
                           text={index === activeIndex ? 'light' : 'dark'}
-                          className={`qoutes_card animIn ${index === activeIndex ? 'last' : ''}`}
+                          className={`qoutes_card animIn ${index === texts.length ? 'last' : ''}`}
                           onClick={changeCard(item)}
                       >
                           <p className={`card-text mb-0 `}>{item.text}</p>
