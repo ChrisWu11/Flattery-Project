@@ -5,9 +5,9 @@ const GenQoutes = ({ className = '', texts = [], activeIndex, changeCard }) => {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        if (scrollRef && texts.length) {
-            scrollRef.current.scrollIntoView({ behavior: 'smooth' });
-        }
+        // if (scrollRef && texts.length) {
+        //     scrollRef.current.scrollIntoView({ behavior: 'smooth' });
+        // }
     }, [scrollRef, texts]);
 
     return (
