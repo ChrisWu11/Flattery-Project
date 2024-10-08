@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Card } from 'react-bootstrap';
 
-const GenQoutes = ({ className = '', texts = [] }) => {
+const GenQoutes = ({ className = '', texts = [], activeIndex, changeCard }) => {
     const scrollRef = useRef(null);
 
     useEffect(() => {
@@ -13,13 +13,14 @@ const GenQoutes = ({ className = '', texts = [] }) => {
     return (
         <div className={`qoutes ${className}`}>
             {texts.length
-                ? texts.map((item) => (
+                ? texts.map((item, index) => (
                       <Card
                           body
                           key={item.id}
-                          bg={item.id === 'finished' ? 'danger' : 'default'}
-                          text={item.id === 'finished' ? 'light' : 'dark'}
-                          className={`qoutes_card animIn ${item.id === 'finished' ? 'last' : ''}`}
+                          bg={index === activeIndex ? 'danger' : 'default'}
+                          text={index === activeIndex ? 'light' : 'dark'}
+                          className={`qoutes_card animIn ${index === activeIndex ? 'last' : ''}`}
+                          onClick={changeCard(item)}
                       >
                           <p className={`card-text mb-0 `}>{item.text}</p>
                       </Card>

@@ -10,6 +10,7 @@ const Proposal = ({ className = '' }) => {
     // const person = id.split('-').join(' ');
     const smileImgSrc = '/Flattery-Project/images/smile.webp';
     const isPlay = useRef(false);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     // const smileImgSrc = '/images/smile.webp';
     const [texts, setTexts] = useState([]);
@@ -31,6 +32,7 @@ const Proposal = ({ className = '' }) => {
         }
         setCurrentText((prevData) => ({ ...prevData, ...qoute }));
         setTexts((prevData) => [...prevData, qoute]);
+        setActiveIndex(texts.length);
     };
 
     const playAudio = () => {
@@ -55,6 +57,15 @@ const Proposal = ({ className = '' }) => {
         setTimeout(() => {
             button.classList.remove('shake');
         }, 1000);
+    };
+
+    const changeCard = (item) => () => {
+        const index = texts.findIndex((_) => _.id === item.id);
+        setActiveIndex(index);
+        setCurrentText({
+            image: texts[index].image,
+            subtext: currentText.subtext,
+        });
     };
 
     // effects
@@ -91,7 +102,12 @@ const Proposal = ({ className = '' }) => {
                                 <p className="propsal_subtitle">{currentText.subtext}</p>
                             </div>
 
-                            <GenQoutes texts={texts} className="main-content" />
+                            <GenQoutes
+                                texts={texts}
+                                className="main-content"
+                                activeIndex={activeIndex}
+                                changeCard={changeCard}
+                            />
 
                             {currentText.id !== 'finished' ? (
                                 <Button variant="danger" onClick={handleClick}>

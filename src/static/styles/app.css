@@ -214,4 +214,7 @@ body {
   animation-duration: 0.1s;
   transform-origin: 50% 50%;
   animation-timing-function: linear;
-}/*# sourceMappingURL=app.css.map */
+} /*# sourceMappingURL=app.css.map */
+.qoutes_card {
+  cursor: pointer !important;
+}
