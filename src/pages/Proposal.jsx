@@ -1,3 +1,4 @@
+import confetti from 'canvas-confetti';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import GenQoutes from '../components/GenQoutes';
@@ -66,6 +67,14 @@ const Proposal = ({ className = '' }) => {
         setCurrentText({ ...currentText, image: texts[index].image });
     };
 
+    const clickFire = () => {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+        });
+    };
+
     // effects
     useEffect(() => {
         document.title = `Smile - Laughing 姐`;
@@ -117,7 +126,12 @@ const Proposal = ({ className = '' }) => {
                         </div>
                     </Col>
                 </Row>
-                <img className="smileImg" src={smileImgSrc} alt="miniso最漂亮的姐姐" />
+                <img
+                    className="smileImg"
+                    src={smileImgSrc}
+                    alt="miniso最漂亮的姐姐"
+                    onClick={clickFire}
+                />
                 <audio id="myAudio" controls autoPlay hidden>
                     <source src="/Flattery-Project/music/perfect.mp3" type="audio/mpeg" />
                     <embed src="/Flattery-Project/music/perfect.mp3" />
