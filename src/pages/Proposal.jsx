@@ -79,12 +79,11 @@ const Proposal = ({ className = '' }) => {
 
     // preload images
     useEffect(() => {
-        // 判断是不是11.24，如果是，则设置isBirthday为true
         const today = new Date();
         const month = today.getMonth() + 1;
         const day = today.getDate();
         console.log(month, day);
-        if (month === 11 && day === 20) {
+        if (month === 11 && day === 24) {
             setIsBirthday(true);
             confetti({
                 particleCount: 100,
