@@ -40,3 +40,69 @@
     width: 30vw;
   }
 }
+
+.birthday-animation {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  animation: fadeIn 0.5s ease-in-out forwards,
+    fadeOut 4s ease-in-out 1s forwards;
+}
+
+.birthday-animation img {
+  width: 40vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 边框虚化 */
+  border-radius: 20px;
+  mask: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+.birthday-animation p {
+  position: absolute;
+  white-space: nowrap;
+  font-weight: bold;
+  width: 100%;
+  top: 20px;
+  text-align: center;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255);
+  font-size: 7rem;
+}
+
+@media (max-width: 750px) {
+  .birthday-animation img {
+    width: 100%;
+  }
+  .birthday-animation p {
+    top: 15%;
+    font-size: 2rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}

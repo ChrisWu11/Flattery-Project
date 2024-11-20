@@ -10,6 +10,7 @@ const Proposal = ({ className = '' }) => {
     // const { id } = useParams();
     // const person = id.split('-').join(' ');
     const smileImgSrc = '/Flattery-Project/images/smile.webp';
+    const birthdayImgSrc = '/Flattery-Project/images/birthday.png';
     const isPlay = useRef(false);
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -20,6 +21,7 @@ const Proposal = ({ className = '' }) => {
         subtext: 'The most beautiful girl in MINISO',
     });
     const [textIndex, setTextIndex] = useState(0);
+    const [isBirthday, setIsBirthday] = useState(false);
 
     // add quotes
     const addQoutes = () => {
@@ -69,7 +71,7 @@ const Proposal = ({ className = '' }) => {
 
     const clickFire = () => {
         confetti({
-            particleCount: 100,
+            particleCount: 200,
             spread: 70,
             origin: { y: 0.6 },
         });
@@ -77,6 +79,20 @@ const Proposal = ({ className = '' }) => {
 
     // preload images
     useEffect(() => {
+        // 判断是不是11.24，如果是，则设置isBirthday为true
+        const today = new Date();
+        const month = today.getMonth() + 1;
+        const day = today.getDate();
+        console.log(month, day);
+        if (month === 11 && day === 20) {
+            setIsBirthday(true);
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+            });
+        }
+
         images.forEach((image) => {
             const img = new Image();
             img.src = image;
@@ -90,7 +106,6 @@ const Proposal = ({ className = '' }) => {
                 '--image': `url(${currentText.image})`,
             }}
         >
-            {/* <audio src="/music/perfect.mp3" autoPlay="autoplay" loop="loop" /> */}
             <div className="proposal_media bg-dark d-none d-md-block" />
             <Container>
                 <Row>
@@ -131,6 +146,13 @@ const Proposal = ({ className = '' }) => {
                     <embed src="/Flattery-Project/music/perfect.mp3" />
                 </audio>
             </Container>
+
+            {isBirthday && (
+                <div className="birthday-animation">
+                    <img src={birthdayImgSrc} alt="Happy Birthday" />
+                    <p>Happy Birthday!!!</p>
+                </div>
+            )}
         </div>
     );
 };
