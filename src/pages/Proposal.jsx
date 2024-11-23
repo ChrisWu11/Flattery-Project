@@ -141,8 +141,8 @@ const Proposal = ({ className = '' }) => {
                     onClick={clickFire}
                 />
                 <audio id="myAudio" controls autoPlay hidden>
-                    <source src="/Flattery-Project/music/perfect.mp3" type="audio/mpeg" />
-                    <embed src="/Flattery-Project/music/perfect.mp3" />
+                    <source src="/Flattery-Project/music/tzyx.mp3" type="audio/mpeg" />
+                    <embed src="/Flattery-Project/music/tzyx.mp3" />
                 </audio>
             </Container>
 
