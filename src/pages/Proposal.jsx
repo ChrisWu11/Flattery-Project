@@ -83,7 +83,7 @@ const Proposal = ({ className = '' }) => {
         const month = today.getMonth() + 1;
         const day = today.getDate();
         console.log(month, day);
-        if (month === 11 && day === 23) {
+        if ((month === 11 && day === 23) || (month === 11 && day === 24)) {
             setIsBirthday(true);
             confetti({
                 particleCount: 100,
