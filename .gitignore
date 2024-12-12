@@ -3,3 +3,6 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# 部署
+deploy.js
