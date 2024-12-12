@@ -4,20 +4,21 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import GenQoutes from '../components/GenQoutes';
 import { images } from '../data/preload-image-list.json';
 import { propose, qoutes } from '../data/quotes.json';
+import { getAssetPath } from '../utils/path';
 import './Proposal.css';
 
 const Proposal = ({ className = '' }) => {
     // const { id } = useParams();
     // const person = id.split('-').join(' ');
-    const smileImgSrc = '/Flattery-Project/images/smile.webp';
-    const birthdayImgSrc = '/Flattery-Project/images/birthday.png';
+    const smileImgSrc = getAssetPath('/images/smile.webp');
+    const birthdayImgSrc = getAssetPath('/images/birthday.png');
     const isPlay = useRef(false);
     const [activeIndex, setActiveIndex] = useState(0);
 
     // const smileImgSrc = '/images/smile.webp';
     const [texts, setTexts] = useState([]);
     const [currentText, setCurrentText] = useState({
-        image: '/Flattery-Project/images/image-05.webp',
+        image: getAssetPath('/images/image-05.webp'),
         subtext: 'The most beautiful girl in MINISO',
     });
     const [textIndex, setTextIndex] = useState(0);
@@ -82,7 +83,8 @@ const Proposal = ({ className = '' }) => {
         const today = new Date();
         const month = today.getMonth() + 1;
         const day = today.getDate();
-        console.log(month, day);
+
+        // 好像是23号，又好像是24号，忘记了随便吧
         if ((month === 11 && day === 23) || (month === 11 && day === 24)) {
             setIsBirthday(true);
             confetti({
@@ -94,7 +96,7 @@ const Proposal = ({ className = '' }) => {
 
         images.forEach((image) => {
             const img = new Image();
-            img.src = image;
+            img.src = getAssetPath(image);
         });
     }, []);
 
@@ -141,8 +143,9 @@ const Proposal = ({ className = '' }) => {
                     onClick={clickFire}
                 />
                 <audio id="myAudio" controls autoPlay hidden>
-                    <source src="/Flattery-Project/music/tzyx.mp3" type="audio/mpeg" />
-                    <embed src="/Flattery-Project/music/tzyx.mp3" />
+                    <source src={getAssetPath('/music/tzyx.mp3')} type="audio/mpeg" />
+                    <track kind="captions" src="" label="" />
+                    <embed src={getAssetPath('/music/tzyx.mp3')} />
                 </audio>
             </Container>
 

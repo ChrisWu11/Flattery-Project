@@ -1,13 +1,13 @@
 {
   "images": [
-    "/Flattery-Project/images/image-01.webp",
-    "/Flattery-Project/images/image-02.webp",
-    "/Flattery-Project/images/image-03.webp",
-    "/Flattery-Project/images/image-04.webp",
-    "/Flattery-Project/images/image-05.webp",
-    "/Flattery-Project/images/image-06.webp",
-    "/Flattery-Project/images/image-07.webp",
-    "/Flattery-Project/images/image-08.webp",
-    "/Flattery-Project/images/smile.webp"
+    "/images/image-01.webp",
+    "/images/image-02.webp",
+    "/images/image-03.webp",
+    "/images/image-04.webp",
+    "/images/image-05.webp",
+    "/images/image-06.webp",
+    "/images/image-07.webp",
+    "/images/image-08.webp",
+    "/images/smile.webp"
   ]
 }
