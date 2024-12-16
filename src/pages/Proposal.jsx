@@ -4,21 +4,20 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import GenQoutes from '../components/GenQoutes';
 import { images } from '../data/preload-image-list.json';
 import { propose, qoutes } from '../data/quotes.json';
-import { getAssetPath } from '../utils/path';
 import './Proposal.css';
 
 const Proposal = ({ className = '' }) => {
     // const { id } = useParams();
     // const person = id.split('-').join(' ');
-    const smileImgSrc = getAssetPath('/images/smile.webp');
-    const birthdayImgSrc = getAssetPath('/images/birthday.png');
+    // const smileImgSrc = getAssetPath('/images/smile.webp');
+    const smileImgSrc = 'https://camera-chl.s3.bitiful.net/smile.webp';
+    const birthdayImgSrc = 'https://camera-chl.s3.bitiful.net/birthday.png';
     const isPlay = useRef(false);
     const [activeIndex, setActiveIndex] = useState(0);
 
-    // const smileImgSrc = '/images/smile.webp';
     const [texts, setTexts] = useState([]);
     const [currentText, setCurrentText] = useState({
-        image: getAssetPath('/images/image-05.webp'),
+        image: 'https://camera-chl.s3.bitiful.net/image-05.webp',
         subtext: 'The most beautiful girl in MINISO',
     });
     const [textIndex, setTextIndex] = useState(0);
@@ -96,7 +95,8 @@ const Proposal = ({ className = '' }) => {
 
         images.forEach((image) => {
             const img = new Image();
-            img.src = getAssetPath(image);
+            // img.src = getAssetPath(image);
+            img.src = image;
         });
     }, []);
 
@@ -143,9 +143,9 @@ const Proposal = ({ className = '' }) => {
                     onClick={clickFire}
                 />
                 <audio id="myAudio" controls autoPlay hidden>
-                    <source src={getAssetPath('/music/tzyx.mp3')} type="audio/mpeg" />
+                    <source src="https://camera-chl.s3.bitiful.net/tzyx.mp3" type="audio/mpeg" />
                     <track kind="captions" src="" label="" />
-                    <embed src={getAssetPath('/music/tzyx.mp3')} />
+                    <embed src="https://camera-chl.s3.bitiful.net/tzyx.mp3" />
                 </audio>
             </Container>
 

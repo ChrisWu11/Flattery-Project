@@ -1,13 +1,13 @@
 {
   "images": [
-    "/images/image-01.webp",
-    "/images/image-02.webp",
-    "/images/image-03.webp",
-    "/images/image-04.webp",
-    "/images/image-05.webp",
-    "/images/image-06.webp",
-    "/images/image-07.webp",
-    "/images/image-08.webp",
-    "/images/smile.webp"
+    "https://camera-chl.s3.bitiful.net/image-01.webp",
+    "https://camera-chl.s3.bitiful.net/image-02.webp",
+    "https://camera-chl.s3.bitiful.net/image-03.webp",
+    "https://camera-chl.s3.bitiful.net/image-04.webp",
+    "https://camera-chl.s3.bitiful.net/image-05.webp",
+    "https://camera-chl.s3.bitiful.net/image-06.webp",
+    "https://camera-chl.s3.bitiful.net/image-07.webp",
+    "https://camera-chl.s3.bitiful.net/image-08.webp",
+    "https://camera-chl.s3.bitiful.net/smile.webp"
   ]
 }
